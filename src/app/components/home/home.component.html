@@ -1,0 +1,5 @@
+<main class="container mb-5">
+  <app-galeria [peliculas]="cartelera | slice:0:6" titulo="En cartelera"></app-galeria>
+  <app-galeria [peliculas]="populares | slice:0:6" titulo="Las más votadas"></app-galeria>
+  <app-galeria [peliculas]="infantil | slice:0:6" titulo="Las favoritas de los niños"></app-galeria>
+</main>

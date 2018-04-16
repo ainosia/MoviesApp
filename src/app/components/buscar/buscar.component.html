@@ -1,0 +1,24 @@
+<main class="container mt-5">
+  <section class="row">
+    <div class="col-md-4">
+      <label class="text-primary">Buscar película</label>
+      <input [(ngModel)]="buscar" name="buscar" class="form-control" type="text" placeholder="Busca películas" (keyup.enter)="searchFilm()">
+    </div>
+  </section>
+  <section class="row mt-5">
+    <div class="col-md-12">
+      <div class="card-columns">
+        <div class="card animate fadeIn fast" *ngFor="let pelicula of _pelisService.peliculas">
+          <img class="card-img-top" [src]="pelicula | imagenes" [alt]="pelicula.original_title">
+          <div class="card-body">
+            <h5 class="card-title text-primary">{{ pelicula.original_title }}</h5>
+            <p class="card-text justify">{{ pelicula.overview | slice:0:200 }}...</p>
+          </div>
+          <div class="card-body">
+            <a href="#" type="button" class="btn btn-outline-primary btn-block" [routerLink]="['/pelicula', pelicula.id, 'buscar', buscar]" (onclick)="getPelicula(idx)">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

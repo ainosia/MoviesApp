@@ -1,0 +1,35 @@
+<section class="mt-5 mb-5">
+  <h1 class="display-4 text-primary text-center pt-3 mb-4">{{ titulo }}</h1>
+  <div class="row animated fadeIn fast" *ngIf="peliculas">
+    <div class="col-sm-6">
+      <div class="row">
+        <picture [routerLink]="['/pelicula', peliculas[0].id, 'home']" class="col-md-12 div-pic puntero" [ngStyle]="{'background-image':'url('+ (peliculas[0] | imagenes) +' )'}">
+          <p class="pic-titulo">{{ peliculas[0].original_title }}</p>
+        </picture>
+      </div>
+      <div class="row">
+        <picture [routerLink]="['/pelicula', peliculas[1].id, 'home']" class="col-sm-6 div-pic-small puntero" [ngStyle]="{'background-image':'url('+ (peliculas[1] | imagenes) +' )'}">
+          <p class="pic-titulo">{{ peliculas[1].original_title }}</p>
+        </picture>
+        <picture [routerLink]="['/pelicula', peliculas[2].id, 'home']" class="col-sm-6 div-pic-small puntero" [ngStyle]="{'background-image':'url('+ (peliculas[2] | imagenes) +' )'}">
+          <p class="pic-titulo">{{ peliculas[2].original_title }}</p>
+        </picture>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="row">
+        <picture [routerLink]="['/pelicula', peliculas[3].id, 'home']" class="col-sm-6 div-pic-small puntero" [ngStyle]="{'background-image':'url('+ (peliculas[3] | imagenes) +' )'}">
+          <p class="pic-titulo">{{ peliculas[3].original_title }}</p>
+        </picture>
+        <picture [routerLink]="['/pelicula', peliculas[4].id, 'home']" class="col-sm-6 div-pic-small puntero" [ngStyle]="{'background-image':'url('+ (peliculas[4] | imagenes) +' )'}">
+          <p class="pic-titulo">{{ peliculas[4].original_title }}</p>
+        </picture>
+      </div>
+      <div class="row">
+        <picture [routerLink]="['/pelicula', peliculas[5].id, 'home']" class="col-md-12 div-pic puntero" [ngStyle]="{'background-image':'url('+ (peliculas[5] | imagenes) +' )'}">
+          <p class="pic-titulo">{{ peliculas[5].original_title }}</p>
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
